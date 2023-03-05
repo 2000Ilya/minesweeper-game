@@ -1,8 +1,15 @@
-### `npm i`
+Сайт доступен по адресу [https://2000ilya.github.io/minesweeper-game](https://2000ilya.github.io/minesweeper-game)
 
-Installs all neccecary packages
+Для установки всех необходимых пакетов используйте команду в терминале:
 
-### `npm run start`
+```bash
+npm i
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Для запуска в режиме разработки используйте команду в терминале:
+
+```bash
+npm run start
+```
+
+Сайт можно увидеть в браузере по адресу [http://localhost:3000](http://localhost:3000)
