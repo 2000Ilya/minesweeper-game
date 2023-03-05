@@ -1,0 +1,72 @@
+.cell {
+  height: 16px;
+  width: 16px;
+
+  &:active + .restart-button {
+    background: URL("../../resources/icons/sprite.png") 85px 60px !important;
+  }
+}
+
+.cell__mine-lack {
+  background: URL("../../resources/icons/sprite.png") 20px 33px;
+}
+
+.cell__mine-exploded {
+  background: URL("../../resources/icons/sprite.png") 37px 33px;
+}
+
+.cell__question-open {
+  background: URL("../../resources/icons/sprite.png") 71px 33px;
+}
+
+.cell__closed {
+  background: URL("../../resources/icons/sprite.png") 0 33px;
+}
+
+.cell__m {
+  background: URL("../../resources/icons/sprite.png") 54px 33px;
+}
+
+.cell__flagged {
+  background: URL("../../resources/icons/sprite.png") 105px 33px;
+}
+
+.cell__questioned {
+  background: URL("../../resources/icons/sprite.png") 88px 33px;
+}
+
+.cell__0 {
+  background: URL("../../resources/icons/sprite.png") 122px 33px;
+}
+
+.cell__1 {
+  background: URL("../../resources/icons/sprite.png") 0 16px;
+}
+
+.cell__2 {
+  background: URL("../../resources/icons/sprite.png") 122px 16px;
+}
+
+.cell__3 {
+  background: URL("../../resources/icons/sprite.png") 105px 16px;
+}
+
+.cell__4 {
+  background: URL("../../resources/icons/sprite.png") 88px 16px;
+}
+
+.cell__5 {
+  background: URL("../../resources/icons/sprite.png") 71px 16px;
+}
+
+.cell__6 {
+  background: URL("../../resources/icons/sprite.png") 54px 16px;
+}
+
+.cell__7 {
+  background: URL("../../resources/icons/sprite.png") 37px 16px;
+}
+
+.cell__8 {
+  background: URL("../../resources/icons/sprite.png") 20px 16px;
+}

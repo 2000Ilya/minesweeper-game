@@ -1,0 +1,27 @@
+.game-vidget {
+  padding: 10px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #afafaf;
+  border-color: #ffffff #686868 #686868 #ffffff;
+  border-width: 3px;
+  border-style: solid;
+}
+
+.field {
+  width: fit-content;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0;
+  border-color: #686868 #ffffff #ffffff #686868;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.row {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 0;
+}

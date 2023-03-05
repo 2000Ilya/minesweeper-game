@@ -1,0 +1,25 @@
+.restart-button {
+  height: 26px;
+  width: 26px;
+
+  &:active {
+    background: URL("../../resources/icons/sprite.png") 112px 60px;
+  }
+}
+
+.restart-button-beforeStart,
+.restart-button-playing {
+  background: URL("../../resources/icons/sprite.png") 0px 60px;
+}
+
+.restart-button-unknown {
+  background: URL("../../resources/icons/sprite.png") 85px 60px;
+}
+
+.restart-button-finish {
+  background: URL("../../resources/icons/sprite.png") 58px 60px;
+}
+
+.restart-button-over {
+  background: URL("../../resources/icons/sprite.png") 31px 60px;
+}

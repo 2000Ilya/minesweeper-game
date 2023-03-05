@@ -1,0 +1,14 @@
+.control-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 36px;
+  width: calc(100%);
+  padding: 0 12px;
+  box-sizing: border-box;
+  background-color: #b3b3b3;
+  border-color: #686868 #ffffff #ffffff #686868;
+  border-width: 2px;
+  border-style: solid;
+}
