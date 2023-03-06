@@ -11,8 +11,6 @@ type Props = {
 };
 
 const RestartButton = ({ state, onClickCallback, isUnknownSmile }: Props) => {
-  console.log(isUnknownSmile);
-
   return (
     <button
       onClick={onClickCallback}

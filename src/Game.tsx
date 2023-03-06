@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import Cell from "@components/Cell";
 import generatedField from "@utils/GenerateField";
 import { CellState, Coordinates, Data, Field, GameState } from "@utils/types";
-import { changeCellState } from "@utils/MutateField";
+import { changeCellState, randomlyTransportMine } from "@utils/MutateField";
 
 import "./Game.scss";
 import ControlBar from "@components/ControlBar";
@@ -57,11 +57,17 @@ function App() {
     coordX: number,
     coordY: number
   ): void => {
-    console.log(data.gameState);
 
     if (data.gameState !== "over") {
       setData((data) => {
         const newField = data.field[0].map((row) => row);
+        const minesCoordinates = data.field[1].map((coord) => coord);
+        if (
+          newField[coordY][coordX].value === "m" &&
+          data.gameState === "beforeStart"
+        ) {
+          randomlyTransportMine(newField, minesCoordinates, coordX, coordY);
+        }
         changeCellState(
           newField,
           state,
@@ -102,7 +108,7 @@ function App() {
             }));
           }
         );
-        return { ...data, field: [newField, data.field[1]] };
+        return { ...data, field: [newField, minesCoordinates] };
       });
     }
     if (data.gameState === "beforeStart") {

@@ -85,8 +85,6 @@ function openMines(field: Field, minesCoordinates: Array<Coordinates>): void {
 }
 
 function openFlags(field: Field): void {
-  console.log("lol");
-
   for (let rowIndex = 0; rowIndex < field.length; rowIndex++) {
     for (let colIndex = 0; colIndex < field[rowIndex].length; colIndex++) {
       if (
@@ -99,15 +97,27 @@ function openFlags(field: Field): void {
   }
 }
 
-function addNewMine(field: Field) {
-  let x: number = Math.floor(Math.random() * (FIELD_SIZE * FIELD_SIZE))
-  let y: number = Math.floor(Math.random() * (FIELD_SIZE * FIELD_SIZE))
+function addNewMine(field: Field): Coordinates {
+  let coordX: number = Math.floor(Math.random() * (FIELD_SIZE * FIELD_SIZE));
+  let coordY: number = Math.floor(Math.random() * (FIELD_SIZE * FIELD_SIZE));
 
-  while (field[y][x].value !== 'm') {
-    x = Math.floor(Math.random() * (FIELD_SIZE * FIELD_SIZE))
-    y = Math.floor(Math.random() * (FIELD_SIZE * FIELD_SIZE))
+  while (field[coordY][coordX].value !== "m") {
+    coordX = Math.floor(Math.random() * (FIELD_SIZE * FIELD_SIZE));
+    coordY = Math.floor(Math.random() * (FIELD_SIZE * FIELD_SIZE));
   }
-  field[y][x].value = 'm';
+  field[coordY][coordX].value = "m";
+
+  for (let x = -1; x <= 1; x++) {
+    for (let y = -1; y <= 1; y++) {
+      if (field[coordY + y]) {
+        const currentCell = field[coordY + y][coordX + x]?.value;
+        if (typeof currentCell === "number") {
+          field[coordY + y][coordX + x].value = currentCell + 1;
+        }
+      }
+    }
+  }
+  return [coordY, coordX];
 }
 
 function randomlyTransportMine(
@@ -116,25 +126,26 @@ function randomlyTransportMine(
   coordX: number,
   coordY: number
 ): void {
-  let currentCell = 0;
+  let currentCellValue = 0;
 
   for (let x = -1; x <= 1; x++) {
     for (let y = -1; y <= 1; y++) {
       if (field[coordY + y]) {
         const cell = field[coordY + y][coordX + x]?.value;
-        if (cell === 'm') {
-          currentCell += 1;
+        if (cell === "m") {
+          currentCellValue += 1;
         }
       }
     }
   }
-  field[coordY][coordX].value = currentCell
+  field[coordY][coordX].value = currentCellValue;
 
   for (let i = 0; i < minesCoordinates.length; i++) {
     let mine = minesCoordinates[i];
     if (mine[0] === coordY && mine[1] === coordX) {
-
+      minesCoordinates[i] = addNewMine(field);
     }
+    break;
   }
 }
 

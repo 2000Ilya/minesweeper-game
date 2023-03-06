@@ -22,8 +22,6 @@ const Stopwatch = ({ state }: Props) => {
     if (intervalId === undefined && state === 'playing') {
       setStartTime(new Date());
       intervalId = setInterval(() => {
-        console.log("upd");
-
         setCurrentTime(new Date());
       }, 1000);
     }
