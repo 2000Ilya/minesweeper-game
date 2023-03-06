@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/minesweeper-game/static/css/main.6569da5b.css",
-    "main.js": "/minesweeper-game/static/js/main.0b11a1f1.js",
+    "main.js": "/minesweeper-game/static/js/main.dd36e347.js",
     "index.html": "/minesweeper-game/index.html",
     "main.6569da5b.css.map": "/minesweeper-game/static/css/main.6569da5b.css.map",
-    "main.0b11a1f1.js.map": "/minesweeper-game/static/js/main.0b11a1f1.js.map"
+    "main.dd36e347.js.map": "/minesweeper-game/static/js/main.dd36e347.js.map"
   },
   "entrypoints": [
     "static/css/main.6569da5b.css",
-    "static/js/main.0b11a1f1.js"
+    "static/js/main.dd36e347.js"
   ]
 }
